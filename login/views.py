@@ -28,8 +28,6 @@ class VkCodeAction(View):
         
         response = requests.get(VK_TOKEN_URI, params=payload).json()
         
-        print(f'\n-> Response: {response}\n')
-        
         if 'error' in response:
             return redirect('login')
             
