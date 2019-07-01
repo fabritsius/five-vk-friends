@@ -2,6 +2,15 @@
 
 {% block content %}
 
-<h1>This is a Home Page</h1>
+<h1>Hello, {{ name }}</h1>
+
+<ul>
+{% for friend in friends %}
+    <li>
+        <img src="{{ friend.photo_medium }}" alt="{{friend.first_name}} Avatar">
+        <a href="https://vk.com/id{{ friend.id }}" target="_blank"><p>{{ friend.first_name }} {{ friend.last_name }}</p></a>
+    </li>
+{% endfor %}
+</ul>
 
 {% endblock content %}
