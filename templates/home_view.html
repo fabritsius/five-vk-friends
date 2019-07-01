@@ -4,13 +4,19 @@
 
 <h1>Hello, {{ name }}</h1>
 
-<ul>
-{% for friend in friends %}
-    <li>
-        <img src="{{ friend.photo_medium }}" alt="{{friend.first_name}} Avatar">
-        <a href="https://vk.com/id{{ friend.id }}" target="_blank"><p>{{ friend.first_name }} {{ friend.last_name }}</p></a>
-    </li>
-{% endfor %}
-</ul>
+<h3>Five of your friends</h3>
+<div class="flex-box">
+    {% for friend in friends %}
+    
+    <div class="friend-card">
+        <a href="https://vk.com/id{{ friend.id }}" target="_blank">
+            <img src="{{ friend.photo_medium }}" alt="{{friend.first_name}} Avatar">
+            <div class="friend-name-box">
+                <p>{{ friend.first_name }} {{ friend.last_name }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock content %}

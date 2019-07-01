@@ -1,0 +1,63 @@
+body {
+    width: calc(100% - 40px);
+    min-width: 450px;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+div.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.friend-card {
+    padding: 5px;
+    margin: 10px;
+    width: calc(100% - 80px);
+    max-width: 350px;
+    
+}
+
+div.friend-card:hover {
+    background-color: #f9f9f9;
+    border-radius: 3px;
+}
+
+div.friend-card img {
+    margin: 0 20px;
+    width: 100px;
+    border-radius: 50%;
+    height: 100%;
+}
+
+div.friend-card a {
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.friend-name-box {
+    padding: 35px 5px;
+}
+
+div.friend-name-box p {
+    margin: 0;
+    color: black;
+    border-bottom: 3px solid #e0e0e0;
+    transition: border-bottom 0.4s ease-in-out;
+}
+
+#login-vk-link {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #4E729A;
+    border: 3px solid #2B587A;
+    border-radius: 9px;
+}
+
+#login-vk-link:hover {
+    color: #2B587A;
+    background-color: white;
+}
