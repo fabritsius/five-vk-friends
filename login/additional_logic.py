@@ -1,4 +1,4 @@
-import time
+from time import time
 
 def time_after(seconds):
-    return int(time.time()) + seconds
+    return int(time()) + seconds

@@ -23,6 +23,6 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('login/', LoginView.as_view(), name='login'),
     path('login/vk/', LoginWithVkAction.as_view()),
-    path('login/token/', VkCodeAction.as_view()),
+    path('login/token', VkCodeAction.as_view(), name='vk_token'),
     path('admin/', admin.site.urls),
 ]

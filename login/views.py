@@ -12,7 +12,18 @@ class LoginView(View):
 
 class LoginWithVkAction(View):
     def get(self, request):
-        return redirect('home')
+        VK_AUTHORIZE_URI = 'https://oauth.vk.com/authorize'
+        payload = {
+            'client_id':     os.getenv('VK_CLIENT_ID', default=0),
+            'scope':         ['friends'],
+            'redirect_uri':  request.build_absolute_uri(reverse('vk_token')),
+            'response_type': 'code',
+            'v':             '5.100'
+        }
+
+        req = requests.Request('GET', VK_AUTHORIZE_URI, params=payload).prepare()
+        
+        return redirect(req.url)
 
 class VkCodeAction(View):
     def get(self, request):
@@ -23,7 +34,8 @@ class VkCodeAction(View):
             'client_id':     os.getenv('VK_CLIENT_ID', default=0),
             'client_secret': os.getenv('VK_CLIENT_SECRET', default=0),
             'code':          code,
-            'redirect_uri':  request.build_absolute_uri(reverse('home'))
+            'redirect_uri':  request.build_absolute_uri(reverse('vk_token')),
+            'v':             '5.100'
         }
         
         response = requests.get(VK_TOKEN_URI, params=payload).json()
