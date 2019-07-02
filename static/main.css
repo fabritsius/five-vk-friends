@@ -14,14 +14,12 @@ div.flex-box {
 div.friend-card {
     padding: 5px;
     margin: 10px;
-    width: calc(100% - 80px);
-    max-width: 350px;
-    
+    width: calc(100% - 40px);
+    border-radius: 3px;
 }
 
 div.friend-card:hover {
     background-color: #f9f9f9;
-    border-radius: 3px;
 }
 
 div.friend-card img {
@@ -44,8 +42,11 @@ div.friend-name-box {
 div.friend-name-box p {
     margin: 0;
     color: black;
-    border-bottom: 3px solid #e0e0e0;
-    transition: border-bottom 0.4s ease-in-out;
+    border-bottom: 2px solid #93b3cc;
+}
+
+#login-box {
+    margin: 26px 0;
 }
 
 #login-vk-link {
@@ -58,11 +59,27 @@ div.friend-name-box p {
 }
 
 #login-vk-link:hover {
-    color: #2B587A;
-    background-color: white;
+    background-color: #60c338;
+    border: 3px solid #47a022;
 }
 
 #logout-link {
     font-size: 16px;
     color: #4a76a8;
+}
+
+#logout-link:hover {
+    color: #1c5596;
+}
+
+@media only screen and (min-width: 750px) {
+    div.friend-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media only screen and (min-width: 1050px) {
+    div.friend-card {
+        width: calc(33.3% - 40px);
+    }
 }
