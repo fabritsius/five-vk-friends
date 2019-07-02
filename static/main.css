@@ -1,6 +1,6 @@
 body {
     width: calc(100% - 40px);
-    min-width: 400px;
+    min-width: 335px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
