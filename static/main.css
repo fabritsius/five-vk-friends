@@ -33,11 +33,6 @@ footer a {
     cursor: pointer;
 }
 
-footer a:hover {
-    color: white;
-    background-color: #2B587A; 
-}
-
 div.flex-box {
     display: flex;
     flex-wrap: wrap;
@@ -48,10 +43,6 @@ div.friend-card {
     margin: 10px;
     width: calc(100% - 40px);
     border-radius: 3px;
-}
-
-div.friend-card:hover {
-    background-color: #f9f9f9;
 }
 
 div.friend-card img {
@@ -90,18 +81,9 @@ div.friend-name-box p {
     border-radius: 9px;
 }
 
-#login-vk-link:hover {
-    background-color: #60c338;
-    border: 3px solid #47a022;
-}
-
 #logout-link {
     font-size: 16px;
     color: #4a76a8;
-}
-
-#logout-link:hover {
-    color: #1c5596;
 }
 
 @media only screen and (min-width: 750px) {
@@ -113,5 +95,25 @@ div.friend-name-box p {
 @media only screen and (min-width: 1050px) {
     div.friend-card {
         width: calc(33.3% - 40px);
+    }
+}
+
+@media (hover: hover) {
+    footer a:hover {
+        color: white;
+        background-color: #2B587A; 
+    }
+
+    div.friend-card:hover {
+        background-color: #f9f9f9;
+    }
+
+    #login-vk-link:hover {
+        background-color: #60c338;
+        border: 3px solid #47a022;
+    }
+
+    #logout-link:hover {
+        color: #1c5596;
     }
 }
