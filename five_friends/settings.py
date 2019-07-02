@@ -28,9 +28,6 @@ DEBUG = False
 # HEROKU
 import django_heroku
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
-
 ALLOWED_HOSTS = [os.getenv('SERVER_DOMAIN', default='127.0.0.1'), '.herokuapp.com']
 
 
@@ -131,3 +128,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
