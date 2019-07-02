@@ -26,7 +26,12 @@ class HomeView(View):
             # get user's friends
             res = requests.get(f'{VK_API}/friends.get', params=payload).json()
 
-            friend_uuids = sample(res['response']['items'], 5)
+            show_friends = 5
+            friend_uuids = res['response']['items']
+            num_friends = len(friend_uuids)
+
+            if num_friends > show_friends:
+                friend_uuids = sample(friend_uuids, show_friends)
 
             payload = {
                 'user_ids':      ','.join(str(f) for f in friend_uuids),
@@ -40,6 +45,17 @@ class HomeView(View):
             
             for friend in res['response']:
                 context['friends'].append(friend)
+
+            # create a friends message
+            if num_friends == 0:
+                context['message'] = 'You have no friends'
+            elif num_friends == 1:
+                context['message'] = 'You have one friend'
+            elif num_friends < 6:
+                numbers = ['two', 'three', 'four', 'five']
+                context['message'] = f'You have {numbers[num_friends - 2]} friends'
+            else:
+                context['message'] = 'Here are five of your friends'
 
             return render(request, 'home_view.html', context)
         else:
