@@ -1,1 +1,1 @@
-web: gunicorn five_friends.wsgi:app
+web: gunicorn five_friends.wsgi --log-file -
