@@ -47,3 +47,9 @@ class VkCodeAction(View):
         request.session['vk_expires_at'] =   time_after(response['expires_in'])
 
         return redirect('home')
+
+class LogoutAction(View):
+    def get(self, requests):
+        requests.session.flush()
+        
+        return redirect('login')

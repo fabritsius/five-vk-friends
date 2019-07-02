@@ -61,3 +61,8 @@ div.friend-name-box p {
     color: #2B587A;
     background-color: white;
 }
+
+#logout-link {
+    font-size: 16px;
+    color: #4a76a8;
+}

@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 from main.views import HomeView
-from login.views import LoginView, LoginWithVkAction, VkCodeAction
+from login.views import LoginView, LoginWithVkAction, VkCodeAction, LogoutAction
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('login/', LoginView.as_view(), name='login'),
     path('login/vk/', LoginWithVkAction.as_view()),
     path('login/token', VkCodeAction.as_view(), name='vk_token'),
+    path('logout', LogoutAction.as_view()),
     path('admin/', admin.site.urls),
 ]
