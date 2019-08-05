@@ -1,4 +1,4 @@
-# five-vk-friends
+# Five VK Friends
 
 Demo Django server application with VK OAuth Authorization.
 
